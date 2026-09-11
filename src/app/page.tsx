@@ -1,17 +1,29 @@
-// import Image from "next/image";
+
+
+import Hero from '../app/_components/Hero'
+import ValueProposition from '../app/_components/ValueProposition'
+import KeyFeatures from '../app/_components/KeyFeatures'
+import CallToAction from '../app/_components/CallToAction'
 
 export default function Home() {
   return (
-    <div className="">
-      <main className="">
-        <p>Hola mundo!</p>
+      <main>
+
+        <Hero />  
+
+        {/* Content */}
+        <div className="flex flex-col w-full max-w-[80%] mx-auto py-20 gap-25">
+          <ValueProposition />
+          <KeyFeatures />  
+        </div>  
+
+        <CallToAction />
+
       </main>
-    </div>
   );
 }
 
 
-// import Image from "next/image";
 
 // export default function Home() {
 //   return (
