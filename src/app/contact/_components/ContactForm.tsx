@@ -36,7 +36,8 @@ export default function ContactForm() {
                     <label htmlFor="name" // assigns label with input id  
                     className="font-medium">Name</label>
 
-                    <input id="name" name="name" type="text" placeholder="Your name" value={state.values.name}
+                    <input id="name" name="name" type="text" placeholder="Your name" 
+                    defaultValue={state.values.name}
                     className="border border-gray-300 rounded-sm px-3 py-2 outline-none focus:border-black"
                     />
 
@@ -52,7 +53,8 @@ export default function ContactForm() {
                 <div className="flex flex-col gap-2">
                     <label htmlFor="email" className="font-medium">Email</label>
 
-                    <input id="email" name="email" type="text" placeholder="you@mail.com" value={state.values.email}
+                    <input id="email" name="email" type="text" placeholder="you@mail.com" 
+                    defaultValue={state.values.email}
                     className="border border-gray-300 rounded-sm px-3 py-2 outline-none focus:border-black"/>
 
                     {/* Error message, shows if exists */}
@@ -68,7 +70,8 @@ export default function ContactForm() {
                     <label htmlFor="message" className="font-medium">Message</label>
 
                     <textarea id="message" name="message" placeholder="Tell us about your needs..." 
-                    rows={6} value={state.values.message}
+                    rows={6} 
+                    defaultValue={state.values.message}
                     className="border border-gray-300 rounded-sm px-3 py-2 outline-none focus:border-black"/>
 
                     {state.errors?.message && (
@@ -82,8 +85,8 @@ export default function ContactForm() {
                 {state.message && (
                     <div className="flex gap-2 items-center bg-teal-600/10 text-sm text-emerald-700 p-4 
                     border-opacity-0 rounded-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                         </svg>
                         <p>
                             {state.message}
@@ -93,8 +96,7 @@ export default function ContactForm() {
 
                 {/* Submit */}
                 <button type="submit" 
-                className="bg-black text-white px-6 py-3 rounded-sm font-medium 
-                hover:bg-teal-950 transition duration-300 ease-in-out">
+                className="bg-black text-white px-6 py-3 rounded-sm font-medium hover:bg-teal-950 transition duration-300 ease-in-out">
                     Send message
                 </button>
             </form>

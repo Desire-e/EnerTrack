@@ -14,7 +14,7 @@ export default function Contact() {
                         <p className="text-teal-700 md:tracking-[0.25em] tracking-[0.1em]">
                             GET IN TOUCH
                         </p>                
-                        <h1 className="md:text-5xl text-4xl font-bold">Let&apos;s talk about your energy performance.</h1>
+                        <h1 className="md:text-5xl text-4xl font-extrabold">Let&apos;s talk about your energy performance.</h1>
                     </div>
 
                     <div className="flex flex-col gap-5 text-black/60">

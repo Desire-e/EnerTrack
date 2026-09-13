@@ -2,7 +2,7 @@ export default function KeyFeatures() {
     return (
           <section className="flex flex-col md:gap-15 gap-10 md:max-w-[70%] ml-auto">
             <div className="font-heading text-right">
-              <h2 className="md:text-5xl text-4xl font-bold mb-2">
+              <h2 className="md:text-5xl text-4xl font-extrabold mb-2">
                 Key Features
               </h2>
               <h3 className="text-teal-700 md:tracking-[0.25em] tracking-[0.1em]">

@@ -14,13 +14,13 @@ export default function Hero() {
           {/* content */}
           {/* <div className='flex flex-col md:max-w-[50%] max-w-[80%] gap-10'> */}
           <div className="relative z-10 flex flex-col gap-10 
-          max-w-[100%] md:max-w-[50%] md:p-20 p-1">
+          max-w-[100%] md:max-w-[55%] md:p-20 p-1">
 
             <div>
-              <p className="font-heading md:text-base text-sm text-teal-300 mb-2 md:tracking-[0.25em]">
+              <p className="font-heading md:text-base text-sm text-teal-300 mb-2 tracking-[0.35em]">
                 IOT ENERGY MONITORING SOLUTIONS
               </p>
-              <h1 className="font-heading md:text-6xl text-4xl font-semibold">
+              <h1 className="font-heading md:text-6xl text-4xl font-black">
                 Intelligent Energy Management for Industry
               </h1>
             </div>
