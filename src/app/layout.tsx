@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, JetBrains_Mono, Manrope } from "next/font/google";
 // import { Inter, Space_Grotesk } from "next/font/google";
 import Header from './_components/Header'
 import Footer from './_components/Footer'
@@ -13,7 +13,11 @@ const inter = Inter({
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  // variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -30,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${inter.variable} ${manrope.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="flex flex-col min-h-screen box-border">
         <div className="flex flex-col flex-1">

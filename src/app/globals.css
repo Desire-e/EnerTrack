@@ -25,7 +25,8 @@
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-font-manrope);
+  --font-heading: var(--font-manrope);
+  --font-accent: var(--font-jetbrains-mono);
 }
 /* To apply fonts:
 <p className="font-sans">Inter</p>
