@@ -64,19 +64,16 @@ export default function TabList({ items, defaultTabId, products }: TabListProps)
 
             {/* Tab panel (content) */}
             <div className="pt-4">
-                {items.map((item) => (
-                    <div key={item.id} id={`panel-${item.id}`} role="tabpanel"
-                    aria-labelledby={`tab-${item.id}`} // associated with its own Tab item id
-                    hidden={item.id !== activeTab} // hidden if not active
-                    >
-                        {/* shows content if is active */}
-                        <div className="flex gap-10 flex-wrap justify-center w-[90%] mx-auto">
-                            {filteredProducts.map((product) => (
-                                <ProductCard key={product.id} product={product} />
-                            ))}
-                        </div>
+                <div key={activeTab} id={`panel-${activeTab}`} role="tabpanel"
+                aria-labelledby={`tab-${activeTab}`} // associated with its own Tab item id
+                >
+                    {/* shows content if is active */}
+                    <div className="flex gap-10 flex-wrap justify-center w-[90%] mx-auto">
+                        {filteredProducts.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     );
