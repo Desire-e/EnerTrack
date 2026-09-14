@@ -1,15 +1,14 @@
 "use client";
 
-// import { useState } from "react";
-import ContactForm from '../contact/_components/ContactForm'
+import ContactForm from '@/app/contact/_components/ContactForm'
 
 export default function Contact() {
 
     return (
         <main>
             {/* Content */}
-            <div className="flex flex-wrap w-full mx-auto py-20 justify-center md:divide-x-1 divide-black/20 gap-15">
-                <section className='flex flex-col gap-10 w-full md:max-w-[45%] md:px-20 px-10'>
+            <div className="flex flex-wrap w-full mx-auto py-20 justify-center lg:divide-x-1 divide-black/20 lg:gap-1 gap-10">
+                <section className='flex flex-col gap-10 w-full lg:max-w-[50%] xl:px-20 px-10'>
                     <div className="font-heading">
                         <p className="text-teal-700 md:tracking-[0.25em] tracking-[0.1em]">
                             GET IN TOUCH

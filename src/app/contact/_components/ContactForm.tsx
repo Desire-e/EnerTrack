@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { sendContactMessage, type ContactFormState } from '../../utils/contact/validation';
+import { sendContactMessage, type ContactFormState } from '@/app/utils/contact/validation';
 
 // create ContactFormState object, to define initial state of form
 const initialState: ContactFormState = {
@@ -26,10 +26,10 @@ export default function ContactForm() {
     );
 
     return (
-        <section className='flex flex-col md:gap-15 gap-10 w-full md:max-w-[45%] md:px-20 px-10'>
+        <section className='flex flex-col gap-10 w-full lg:max-w-[45%] xl:px-20 px-10'>
             
             <form action={formAction}
-            className="flex flex-col gap-6 w-full max-w-xl">
+            className="flex flex-col gap-6 w-full">
                     
                 {/* Name */}
                 <div className="flex flex-col gap-2">
@@ -104,47 +104,3 @@ export default function ContactForm() {
         </section>
   );
 }
-
-
-
-    // const [name, setName] = useState(""); 
-    // const [email, setEmail] = useState(""); 
-    // const [message, setMessage] = useState("");
-    // const [errors, setErrors] = useState({ name: "", email: "", message: "", });
-
-    // function handleSubmit (e: React.FormEvent<HTMLFormElement>) { // e is a FormEvent produced by a <form> element.
-    //     e.preventDefault();
-    //     // testing
-    //     console.log({ name, email, message, });
-    //     // set new error messages
-    //     const newErrors = { 
-    //         name: nameValid(name), 
-    //         email: emailValid(email), 
-    //         message: messageValid(message) 
-    //     };
-    //     setErrors(newErrors);
-    //     if (newErrors.name || newErrors.email || newErrors.message) {
-    //         return;
-    //         // show error messages
-    //     }
-    // }
-
-    // function nameValid(name: string): string {
-    //     if (name.trim().length < 2) {
-    //         return "Name must contain at least 2 characters"
-    //     }
-    //     return "";
-    // }
-    // function emailValid(email: string): string {
-    //     if(!email.length) {
-    //         return "Please enter your email"
-    //     }
-    //     return "";
-    // }
-    // function messageValid(message: string): string {
-    //     if (message.trim().length < 10) {
-    //         return "Message must contain at least 10 characters"
-    //     }
-    //     return "";
-    // }
-
