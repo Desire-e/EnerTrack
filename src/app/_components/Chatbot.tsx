@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-
+import ReactMarkdown from "react-markdown"; // renders markdown
 
 /** 
  * Resources:
@@ -63,7 +63,7 @@ export default function Chatbot() {
                     because a message can have several parts (text, results of tools, ...) */}
                     {message.parts.map((part, i) =>
                         part.type === "text" ? 
-                        <span key={i}>{part.text}</span> : 
+                        <ReactMarkdown key={i}>{part.text}</ReactMarkdown> : 
                         null
                     )}
                 </div>
