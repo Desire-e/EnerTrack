@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
-import { sendContactMessage, type ContactFormState } from '@/app/utils/contact/validation';
+import { sendContactMessage, type ContactFormState } from '@/app/contact/_utils/validation';
 
 // create ContactFormState object, to define initial state of form
 const initialState: ContactFormState = {
