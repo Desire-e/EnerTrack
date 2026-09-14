@@ -1,21 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Product } from "./ProductCard"
 import { ProductCard } from './ProductCard'
 
 // -----------------------
 // Types 
 // -----------------------
 
-// type that defines every Tab Item
-interface TabItem {
-  id: string;
-  label: string;
-  content: React.ReactNode;
-}
+import { TabItem } from "@/app/products/_types/tab-item"
+import { Product } from "@/app/products/_types/product"
 
-// type that defines properties received by Tab List
+// interface that defines properties received by Tab List
 interface TabListProps {
   items: TabItem[];
   defaultTabId?: string; 
@@ -49,7 +44,7 @@ export default function TabList({ items, defaultTabId, products }: TabListProps)
                         <button key={item.id} id={`tab-${item.id}`} role="tab" aria-selected={isActive}
                         aria-controls={`panel-${item.id}`} // associated with its own Tab panel id
                         onClick={() => setActiveTab(item.id) }
-                        className={`px-4 py-2 transition-colors border-b-2 -mb-px
+                        className={`px-3 py-2 transition-colors border-b-2
                             ${isActive 
                                 ? "border-teal-700 text-teal-700 font-bold" 
                                 : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
@@ -68,7 +63,7 @@ export default function TabList({ items, defaultTabId, products }: TabListProps)
                 aria-labelledby={`tab-${activeTab}`} // associated with its own Tab item id
                 >
                     {/* shows content if is active */}
-                    <div className="flex gap-10 flex-wrap justify-center w-[90%] mx-auto">
+                    <div className="flex lg:flex-row flex-col gap-10 justify-center lg:items-start md:items-center w-[90%] mx-auto">
                         {filteredProducts.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))}
