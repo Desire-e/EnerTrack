@@ -16,7 +16,7 @@ export default function CallToAction() {
               </div>
 
               <div className="col-span-1">
-                <Link href="/products"
+                <Link href="/contact"
                 className="flex items-center gap-2 font-heading p-2 w-fit
                 border-teal-300 border-2 rounded-sm
                 hover:text-black hover:bg-teal-300 focus:text-black focus:bg-teal-300
