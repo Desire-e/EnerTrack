@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TeamCard from "./TeamCard";
+import TeamCard from "@/app/about/_components/TeamCard";
 import { teamAreas } from "@/app/about/_data/team-areas"
 
 export default function Team(){
