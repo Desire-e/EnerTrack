@@ -35,16 +35,12 @@ export default function Chatbot() {
         // If input is empty, doesn't submit
         if (!input.trim()) return;
 
-        console.log(input);
-
         // sendMessage() adds the input to "messages" in an object
         // and sends the POST request to the route handler (route.ts)
         sendMessage({ text: input });
         
         // Reset input's state
         setInput("");
-
-        console.log(status);
     }
 
  
