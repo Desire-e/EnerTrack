@@ -2,7 +2,7 @@
 
 import HomeHero from './_components/HomeHero'
 import ValueProposition from '../app/_components/ValueProposition'
-import KeyFeatures from '../app/_components/KeyFeatures'
+import KeyFeatures from './_components/KeyFeatures'
 import CallToAction from '../app/_components/CallToAction'
 
 export default function Home() {
