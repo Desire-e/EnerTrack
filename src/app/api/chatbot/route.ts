@@ -28,10 +28,12 @@ import {
     toUIMessageStream,
 } from "ai";
 
+import { chatbotSystemPrompt } from "@/app/_utils/chatbot"
+
+
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
-
 
 export async function POST(req: Request) { // Obtains request from browser - user's message
 
@@ -59,6 +61,7 @@ export async function POST(req: Request) { // Obtains request from browser - use
         // capabilities: Object Generation, Tool Usage, Tool Streaming; not image input
         model: groq("openai/gpt-oss-120b"), 
         messages: modelMessages,
+        instructions: chatbotSystemPrompt,
     });
     // Returns an object that represents the result of the 
     // streaming generation, a generation that is still being produced.
