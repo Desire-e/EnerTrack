@@ -4,6 +4,8 @@ import { Inter, JetBrains_Mono, Manrope } from "next/font/google";
 // import { Inter, Space_Grotesk } from "next/font/google";
 import Header from './_components/Header'
 import Footer from './_components/Footer'
+import Chatbot from '@/app/_components/Chatbot'
+
 
 // Fonts
 const inter = Inter({
@@ -39,11 +41,14 @@ export default function RootLayout({ children }: { children: React.ReactNode; })
       <body className="flex flex-col min-h-screen box-border">
         <div className="flex flex-col flex-1">
 
-         <Header />
+          <Header />
+
+          <Chatbot />
       
           {children}
 
           <Footer />
+          
 
         </div>      
       </body>

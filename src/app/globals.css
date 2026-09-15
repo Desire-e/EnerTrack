@@ -7,18 +7,6 @@
   --foreground: #171717;
 }
 
-/* For CallToAction component (Home page) */
-.cta {
-  background: linear-gradient(
-    to top,
-    black 0%,
-    black 60%,
-    rgba(0, 0, 0, 0.747) 75%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-
 /* It records values ​​that Tailwind can use to generate its classes */
 @theme inline { 
   --color-background: var(--background);
@@ -28,11 +16,6 @@
   --font-heading: var(--font-manrope);
   --font-accent: var(--font-jetbrains-mono);
 }
-/* To apply fonts:
-<p className="font-sans">Inter</p>
-<h1 className="font-heading">Manrope</h1>
-*/
-
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -50,4 +33,46 @@ body {
   font-family: var(--font-inter);
 }
 
+/* --------------------------- */
+/* CallToAction component (Home page) */
+/* --------------------------- */
+.cta {
+  background: linear-gradient(
+    to top,
+    black 0%,
+    black 60%,
+    rgba(0, 0, 0, 0.747) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* --------------------------- */
+/* Scrollbar of chatbot */
+/* --------------------------- */
+.chat-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: black;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 9999px;
+}
+
+/* Arrow up */
+.chat-scroll::-webkit-scrollbar-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpolygon points='5,0 10,6 0,6' fill='gray'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Arrow down */
+.chat-scroll::-webkit-scrollbar-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpolygon points='0,0 10,0 5,6' fill='gray'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
