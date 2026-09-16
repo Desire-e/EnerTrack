@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import ReactMarkdown from "react-markdown"; // renders markdown
+import { motion } from "motion/react"
+import { AnimatePresence } from "motion/react";
 
 /**
 * Floating chat widget.
@@ -73,10 +75,17 @@ export default function Chatbot() {
     return (
         <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex flex-col items-end gap-3">
             {/* Chat panel, only visible if it's open */}
+            <AnimatePresence>
             { open && (
-            <div className="flex h-[min(70vh,600px)] w-[min(90vw,380px)] flex-col overflow-hidden
-            rounded-2xl border border-white/10 bg-black shadow-xl shadow-black/40">
-                
+
+            <motion.div key="chat-panel"
+            initial={{ scaleY: 0,opacity: 0 }} // initially invisible
+            animate={{ scaleY: 1, opacity: 1 }} // animation to open, increase   
+            exit={{ scaleY: 0, opacity: 0 }} // animation to open, decrease
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            style={{ transformOrigin: "bottom" }} // collapses to the floating button at bottom
+            className="flex h-[min(70vh,600px)] w-[min(90vw,380px)] flex-col overflow-hidden
+            rounded-2xl border border-white/10 bg-black shadow-xl shadow-black/40">    
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                     <div className="flex items-center gap-2">
@@ -178,8 +187,10 @@ export default function Chatbot() {
                         </svg>
                     </button>
                 </form>
-                </div>
+                </motion.div>
             )}
+            </AnimatePresence>
+
 
             {/* Floating button */}
             <button 
