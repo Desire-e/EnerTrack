@@ -9,6 +9,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Intelligent Energy Management",
   description: "IoT-based energy monitoring solutions for industrial and commercial clients",
+  // open graph inherit from layout.tsx
 };
 
 
