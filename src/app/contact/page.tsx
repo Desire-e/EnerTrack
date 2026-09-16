@@ -1,5 +1,3 @@
-"use client";
-
 import ContactForm from '@/app/contact/_components/ContactForm'
 import type { Metadata } from "next";
 
