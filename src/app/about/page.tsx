@@ -1,7 +1,13 @@
-import Overview from "./_components/Overview";
-import Mission from "./_components/Mission";
-import Team from "./_components/Team";
-import Image from "next/image";
+import Overview from "@/app/about/_components/Overview";
+import Mission from "@/app/about/_components/Mission";
+import Team from "@/app/about/_components/Team";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About EnerTrack",
+    description: "Learn about EnerTrack, our mission, and how we help businesses improve energy visibility and performance.",
+};
+
 
 export default function AboutUs() {
 

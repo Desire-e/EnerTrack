@@ -1,6 +1,13 @@
 "use client";
 
 import ContactForm from '@/app/contact/_components/ContactForm'
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact EnerTrack",
+  description: "Get in touch with EnerTrack to discuss energy monitoring and management solutions for your business.",
+};
+
 
 export default function Contact() {
 

@@ -3,6 +3,24 @@ import TabList from "@/app/products/_components/TabList"
 import { products } from "@/app/products/_data/products";
 import { tabItems } from "@/app/products/_data/tab-items";
 import { Suspense } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Energy Management Products",
+    description: "Explore EnerTrack's IoT-based energy monitoring products designed for industrial and commercial facilities.",
+    openGraph: {
+        title: "Energy Management Products | EnerTrack",
+        description: "Explore IoT-based energy monitoring products designed for industrial and commercial facilities.",
+        images: [
+            {
+                url: "/images/open-graphs/og-image-products.png",
+                width: 960,
+                height: 480,
+                alt: "EnerTrack energy management products",
+            }
+        ],
+    }
+}
 
 
 export default function Products() {
