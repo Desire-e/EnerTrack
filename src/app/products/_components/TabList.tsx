@@ -60,7 +60,7 @@ export default function TabList(
             {/* Tab list with Tab items */}
 
             {/* Animation - bar movement of the active tab item */}
-            <div role="tablist" aria-label="Products navigation" 
+            <div role="tablist" aria-label="Products categories" 
             className="flex md:gap-20 md:place-content-center place-content-between border-b border-gray-200 font-heading">
 
                 { items.map((item) => {

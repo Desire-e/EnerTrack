@@ -16,10 +16,10 @@ export function ProductCard(
                         "/images/placeholder-image.png" : 
                         `/images/${product.image}` 
                     }
-                    alt={`picture of the product ${product.title}`} />
+                    alt={`${product.title}`} />
                 </div>
 
-                <h3 className="font-heading font-extrabold md:text-3xl text-2xl mb-2">{product.title}</h3>
+                <h2 className="font-heading font-extrabold md:text-3xl text-2xl mb-2">{product.title}</h2>
             </div>
             
             {/* Data */}
@@ -31,7 +31,7 @@ export function ProductCard(
                     <ul className="flex flex-col">
                         { product.features.map((feature, i) => (
                             <li className="flex items-center gap-2" key={`feature-${i}`}>
-                                <svg className="size-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                                <svg aria-hidden="true" className="size-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                 </svg>
                                 {feature}
@@ -41,9 +41,9 @@ export function ProductCard(
                 </div>
 
                 <div>
-                    <p className="font-heading font-bold md:text-xl text-lg text-teal-700 border-b py-2 my-2">
+                    <h3 className="font-heading font-bold md:text-xl text-lg text-teal-700 border-b py-2 my-2">
                         Specifications
-                    </p>
+                    </h3>
                     <ul>
                         { product.specifications.map((specification, i) => (
                             <li key={`specification-${i}`}>{specification}</li>

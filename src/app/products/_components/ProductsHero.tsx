@@ -55,7 +55,7 @@ export default function ProductsHero() {
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.2}}
               className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
-                <svg className="size-6 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                 </svg>
                 Real-time monitoring · Track energy consumption as it happens.
@@ -66,7 +66,7 @@ export default function ProductsHero() {
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.4}}
               className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
-                <svg className="size-6 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
                 </svg>
                 Data & analytics · Turn consumption data into actionable insights.
@@ -77,7 +77,7 @@ export default function ProductsHero() {
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.4}}
               className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
-                <svg className="size-6 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                 </svg>
                 Energy optimization · Identify inefficiencies and reduce unnecessary consumption. 

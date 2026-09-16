@@ -8,16 +8,17 @@ export default function DesktopNav(
     { navLinks: NavLink[]; pathname: string }){
     
     return(
-        <nav className="hidden md:flex gap-6">
+        <nav aria-label="main" className="hidden md:flex gap-6">
 
             {navLinks.map(({ href, label }) => (
-                <Link key={href} href={href}>
-     
-                    <p className={`hover:text-teal-300 transition duration-300 ease-in-out 
-                    ${pathname === href ? "text-teal-300" : ""}`}>
-                        {label}
-                    </p>
-                
+                <Link 
+                key={href} 
+                href={href}
+                className={
+                    `hover:text-teal-300 transition duration-300 ease-in-out 
+                    ${pathname === href ? "text-teal-300" : ""}`
+                }>
+                    {label}
                 </Link>
             ))}
 

@@ -39,9 +39,9 @@ export default function KeyFeatures() {
               <h2 className="md:text-5xl text-4xl font-extrabold mb-2">
                 Key Features
               </h2>
-              <h3 className="text-teal-700 md:tracking-[0.25em] tracking-[0.1em]">
+              <p className="text-teal-700 md:tracking-[0.25em] tracking-[0.1em]">
                 EVERYTHING YOU NEED TO MONITOR ENERGY PERFORMANCE
-              </h3>
+              </p>
               <p className="font-sans mt-5">
                 A connected monitoring solution designed to give industrial teams greater control over their energy consumption.
               </p>

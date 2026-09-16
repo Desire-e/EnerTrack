@@ -28,7 +28,7 @@ export default function ContactForm() {
     );
 
     return (
-        <section className='flex flex-col gap-10 w-full lg:max-w-[45%] xl:px-20 px-10'>
+        <div className='flex flex-col gap-10 w-full lg:max-w-[45%] xl:px-20 px-10'>
             
             <form action={formAction}
             className="flex flex-col gap-6 w-full">
@@ -146,7 +146,7 @@ export default function ContactForm() {
                             }}
                             className="overflow-hidden">
                                 <div className="flex gap-2 items-center bg-teal-600/10 text-sm text-emerald-700 p-4 rounded-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
                                     <p>{state.message}</p>
@@ -167,6 +167,6 @@ export default function ContactForm() {
                 
             </form>
 
-        </section>
+        </div>
   );
 }

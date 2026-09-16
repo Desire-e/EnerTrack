@@ -51,6 +51,7 @@ export function MobileNavPanel(
                     
                     {/* Links container */}
                     <motion.nav className="flex flex-col gap-1 px-4 py-4"
+                    aria-label="main"
                     variants={listVariants}
                     initial="closed"
                     animate="open"
@@ -60,11 +61,14 @@ export function MobileNavPanel(
                         {navLinks.map(({ href, label }) => (
                         <motion.div key={href} variants={itemVariants}>
                             
-                            <Link href={href} onClick={() => setOpen(false)}>
-                                <p className={`py-3 text-lg transition duration-300 ease-in-out
-                                ${pathname === href ? "text-teal-300" : "hover:text-teal-300"}`}>
-                                    {label}
-                                </p>
+                            <Link 
+                            href={href} 
+                            onClick={() => setOpen(false)}
+                            className={
+                                `py-3 text-lg transition duration-300 ease-in-out
+                                ${pathname === href ? "text-teal-300" : "hover:text-teal-300"}`
+                            }>
+                                {label}
                             </Link>
                         </motion.div>
                         ))}

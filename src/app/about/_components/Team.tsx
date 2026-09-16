@@ -35,8 +35,12 @@ export default function Team(){
                     ))}
                 </div>
 
-                <Image className="xl:w-[40%] lg:w-[70%] flex-1" src="/images/placeholder-image.png" alt="Team picture" 
-                width={2200} height={2200} loading="lazy" />
+                <Image 
+                className="xl:w-[40%] lg:w-[70%] flex-1" 
+                src="/images/placeholder-image.png" 
+                alt="Team picture" 
+                width={2200} height={2200} 
+                loading="lazy" />
 
             </div>
 
