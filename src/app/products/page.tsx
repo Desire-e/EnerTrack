@@ -13,7 +13,7 @@ export const metadata: Metadata = {
         description: "Explore IoT-based energy monitoring products designed for industrial and commercial facilities.",
         images: [
             {
-                url: "/images/open-graphs/og-image-products.png",
+                url: "/images/open-graphs/og-image-global.png",
                 width: 960,
                 height: 480,
                 alt: "EnerTrack energy management products",

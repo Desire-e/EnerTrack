@@ -6,6 +6,18 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "About EnerTrack",
     description: "Learn about EnerTrack, our mission, and how we help businesses improve energy visibility and performance.",
+    openGraph: {
+        title: "About EnerTrack",
+        description: "Learn about EnerTrack, our mission, and how we help businesses improve energy visibility and performance.",
+        images: [
+            {
+                url: "/images/open-graphs/og-image-global.png",
+                width: 941,
+                height: 470,
+                alt: "About EnerTrack",
+            },
+        ],
+    },
 };
 
 
