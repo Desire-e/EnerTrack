@@ -1,35 +1,58 @@
 "use client";
 
-import { useState } from "react";
 import { ProductCard } from './ProductCard'
 import { motion } from "motion/react";
-
-// -----------------------
-// Types 
-// -----------------------
-
+import { useSearchParams, useRouter } from "next/navigation";
+// Types
 import { TabItem } from "@/app/products/_types/tab-item"
 import { Product } from "@/app/products/_types/product"
 
-// interface that defines properties received by Tab List
-interface TabListProps {
-  items: TabItem[];
-  defaultTabId?: string; 
-  products: Product[];
-}
+/**
+ * useSearchParams() lets you read the current URL's query string.
+ * https://nextjs.org/docs/app/api-reference/functions/use-search-params
+ * 
+ * useRouter() allows you to programmatically change routes inside Client Components.
+ * https://nextjs.org/docs/app/api-reference/functions/use-router
+ */
 
-// -----------------------
-// Component
-// -----------------------
 
-export default function TabList({ items, defaultTabId, products }: TabListProps) {
-  
-    // State - current tabitem selected
-    const [activeTab, setActiveTab] = useState<string>(defaultTabId ?? items[0]?.id);
-    // const [value, setValue] = useState<Type>(initialValue);
+export default function TabList(
+{ items, products }: 
+{ items: TabItem[], products: Product[];}) {
 
-    // Obtains products to show
+    /**
+     * Current tabitem selected (via URL)
+     */
+    
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    
+    // If there's no tabitem via URL, selects tabitem default
+    const requestedTab = searchParams.get("tab") ?? items[0]?.id;
+
+    // Validate search parameter
+    const activeTab = items.some((item) => item.id === requestedTab)
+    ? requestedTab
+    : items[0].id;
+
+
+    /**
+     * Filter products, based on active tabitem
+     */
+
     const filteredProducts = products.filter(p => p.categoryId === activeTab);
+
+    /**
+     * Handler change of active tabitem.
+     * When an active tab changes, URL changes
+     */
+
+    function handleTabChange(tabId: string) {
+        router.push(
+            `/products?tab=${tabId}`, // href
+            { scroll: false } // navigate options
+        )      
+    }
 
 
     return (
@@ -46,7 +69,7 @@ export default function TabList({ items, defaultTabId, products }: TabListProps)
                     return (
                         <button key={item.id} id={`tab-${item.id}`} role="tab" aria-selected={isActive}
                         aria-controls={`panel-${item.id}`} // associated with its own Tab panel id
-                        onClick={() => setActiveTab(item.id) }
+                        onClick={() => handleTabChange(item.id) }
                         className={`relative px-3 py-2 transition-colors
                             ${isActive 
                                 ? "text-teal-700 font-bold" 
@@ -70,8 +93,7 @@ export default function TabList({ items, defaultTabId, products }: TabListProps)
                 })}
             </div>
 
-            
-            
+                       
 
             {/* Tab panel (content) */}
             <div className="pt-4">

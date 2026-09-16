@@ -15,11 +15,12 @@ export default function Products() {
                 <section className='flex flex-col md:gap-15 gap-10 w-full'>
                     <TabList 
                     items={tabItems} // every section - Tab items 
-                    defaultTabId={tabItems[0].id} // default Tab item selected
+                    // tabId={tabId} // default Tab item selected
                     products={products} // every product
                     />
                 </section>
             </div>  
+
       </main>
   );
 }
