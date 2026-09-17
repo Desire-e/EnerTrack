@@ -58,8 +58,7 @@ export default function Mission(){
                 </div>
                 
                 {/* Decorative svg */}
-                <div className="relative w-full h-[25vh] xl:mt-10 lg:mt-25 mt-10 lg:absolute lg:inset-0 lg:h-auto lg:mt-0 
-                overflow-hidden pointer-events-none ">                            
+                <div className="relative w-full h-[25vh] xl:mt-10 lg:mt-25 mt-10 lg:absolute lg:inset-0 lg:h-auto lg:mt-0 overflow-hidden pointer-events-none ">                            
                     <Image src="/images/earth-monoline.svg" alt="" width={2200} height={2200} loading="eager"
                     className=" absolute opacity-30 w-full h-auto lg:top-[30%] md:top-[-55%] top-[0%] md:scale-[1] scale-[1.28]" />
                 </div>

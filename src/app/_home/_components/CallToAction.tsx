@@ -60,11 +60,7 @@ export default function CallToAction() {
               whileHover="hover" whileFocus="hover" whileTap="hover"
               variants={linkVariants}
               href="/contact"
-              className="flex items-center justify-center gap-2 p-3 w-[55%] 
-              font-heading text-xl border-teal-300 border-2 rounded-sm
-              text-white bg-transparent
-              hover:text-black hover:bg-teal-300 
-              transition-colors duration-300 ease-in-out"
+              className="flex items-center justify-center gap-2 p-3 w-[55%] font-heading text-xl border-teal-300 border-2 rounded-sm text-white bg-transparent hover:text-black hover:bg-teal-300 transition-colors duration-300 ease-in-out"
               >
                 Request a quote
                 <motion.svg
