@@ -3,8 +3,8 @@
  * based on the relevant _data/ files.
  */
 
-import { values } from "@/app/_data/values"
-import { keyFeatures } from "@/app/_data/features"
+import { values } from "@/app/_home/_data/values"
+import { keyFeatures } from "@/app/_home/_data/features"
 import { teamAreas } from "@/app/about/_data/team-areas"
 import { products } from "@/app/products/_data/products"
 

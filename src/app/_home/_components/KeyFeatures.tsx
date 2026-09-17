@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from "motion/react";
 import TitledCard from "@/app/_components/TitledCard";
-import { keyFeatures } from "@/app/_data/features";
+import { keyFeatures } from "@/app/_home/_data/features";
 
 
 // Animation variants - defines states/animation states with names

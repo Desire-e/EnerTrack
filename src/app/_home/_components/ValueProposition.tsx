@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from "motion/react";
 import TitledCard from "@/app/_components/TitledCard";
-import { values } from "@/app/_data/values";
+import { values } from "@/app/_home/_data/values";
 
 
 const containerVariants: Variants = {
