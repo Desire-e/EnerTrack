@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     title: "Energy Management Products",
     description: "Explore EnerTrack's IoT-based energy monitoring products designed for industrial and commercial facilities.",
     openGraph: {
-        title: "Energy Management Products | EnerTrack",
-        description: "Explore IoT-based energy monitoring products designed for industrial and commercial facilities.",
+        title: "Energy Management Products",
+        description: "Explore EnerTrack's IoT-based energy monitoring products designed for industrial and commercial facilities.",
         images: [
             {
                 url: "/images/open-graphs/og-image-global.png",

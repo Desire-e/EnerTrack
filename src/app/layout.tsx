@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "EnerTrack",
     locale: "en_US",
-    description: "Explore EnerTrack's IoT-based energy monitoring products.",
+    description: "IoT-based energy monitoring solutions for industrial and commercial clients.",
     images: [
       {
         url: "/images/open-graphs/og-image-global.png",

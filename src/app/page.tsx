@@ -1,9 +1,9 @@
 
 
-import HomeHero from '@/app/_components/HomeHero'
-import ValueProposition from '@/app/_components/ValueProposition'
-import KeyFeatures from '@/app/_components/KeyFeatures'
-import CallToAction from '@/app/_components/CallToAction'
+import HomeHero from '@/app/_home/_components/HomeHero'
+import ValueProposition from '@/app/_home/_components/ValueProposition'
+import KeyFeatures from '@/app/_home/_components/KeyFeatures'
+import CallToAction from '@/app/_home/_components/CallToAction'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

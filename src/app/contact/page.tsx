@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     title: "Contact EnerTrack",
     description: "Get in touch with EnerTrack to discuss energy monitoring and management solutions for your business.",
     openGraph: {
-        title: "Contact EnerTrack",
+        title: "Contact",
         description: "Get in touch with EnerTrack to discuss energy monitoring and management solutions for your business.",
         images: [
             {
