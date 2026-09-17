@@ -30,7 +30,7 @@ const jetBrainsMono = JetBrains_Mono({
  */
 export const metadata: Metadata = {
   // metadataBase allows URL-based metadata fields to use a relative path instead of absolute URL
-  metadataBase: new URL("https://ener-track-70wl2hd1z-desiree-torres1.vercel.app"),
+  metadataBase: new URL("https://ener-track-bay.vercel.app/"),
 
   title: {
     // title.template can be used to add a prefix or a suffix to titles defined in child route segments.
