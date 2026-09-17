@@ -1,4 +1,3 @@
-// types/infoCard.ts
 export interface TitledCard {
   title: string;
   description: string;
