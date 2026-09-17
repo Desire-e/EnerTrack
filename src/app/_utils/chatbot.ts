@@ -13,8 +13,6 @@ type PromptData = {
     description: string;
 }
 
-// Generic(<T>) - Doesn't know which type will obtain, but remembers which type received
-// extends - Obtains arrays of any type (T),  that at least meets the type PrompData
 function formatData<T extends PromptData>(data: T[]) {
     return data
         .map((d) =>`- ${d.title}: ${d.description}`)

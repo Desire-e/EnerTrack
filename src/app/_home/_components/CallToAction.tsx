@@ -4,7 +4,6 @@ import { motion, type Variants } from "motion/react";
 import Link from "next/link";
 
 
-// Variants 
 const linkVariants: Variants = {
   rest: {
     color: "white",
@@ -35,7 +34,6 @@ const arrowVariants: Variants = {
 };
 
 
-// Creates a next component, compatible with motion.
 const MotionLink = motion.create(Link);
 
 
@@ -55,7 +53,6 @@ export default function CallToAction() {
               </p>
             </div>
 
-            {/* Animation - arrow (svg) to right while hover/focus/tap */}
 
             <div className="col-span-1 flex justify-end">
               <MotionLink
@@ -67,7 +64,8 @@ export default function CallToAction() {
               font-heading text-xl border-teal-300 border-2 rounded-sm
               text-white bg-transparent
               hover:text-black hover:bg-teal-300 
-              transition-colors duration-300 ease-in-out">
+              transition-colors duration-300 ease-in-out"
+              >
                 Request a quote
                 <motion.svg
                 aria-hidden="true"

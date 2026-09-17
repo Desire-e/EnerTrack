@@ -9,16 +9,14 @@ import { type NavLink } from '@/app/_types/navlink';
 
 
 /**
- * Animation Variants of hamburger menu
+ * Animation variants for the mobile navigation
  */
 
-// Dropdown panel
 const panelVariants: Variants = {
     closed: { height: 0 },
     open: { height: "auto" },
 };
 
-// Links container (stagger)
 const listVariants: Variants = {
     closed: {},
     open: {
@@ -26,7 +24,6 @@ const listVariants: Variants = {
     },
 };
 
-// Links
 const itemVariants: Variants = {
     closed: { opacity: 0, y: -8 },
     open: { opacity: 1, y: 0 },
@@ -41,21 +38,24 @@ export function MobileNavPanel(
         <AnimatePresence>
             {open && (
                 // Panel
-                <motion.div className="absolute left-0 right-0 bg-black md:hidden overflow-hidden border-t border-white/10"
+                <motion.div 
+                className="absolute left-0 right-0 bg-black md:hidden overflow-hidden border-t border-white/10"
                 key="mobile-panel"
                 initial="closed"
                 animate="open"
                 exit="closed"
                 variants={panelVariants}
-                transition={{ duration: 0.3, ease: "easeInOut" }}>
-                    
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                >    
                     {/* Links container */}
-                    <motion.nav className="flex flex-col gap-1 px-4 py-4"
+                    <motion.nav 
+                    className="flex flex-col gap-1 px-4 py-4"
                     aria-label="main"
                     variants={listVariants}
                     initial="closed"
                     animate="open"
-                    exit="closed">
+                    exit="closed"
+                    >
 
                         {/* Link */}
                         {navLinks.map(({ href, label }) => (

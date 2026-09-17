@@ -9,7 +9,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Intelligent Energy Management",
   description: "IoT-based energy monitoring solutions for industrial and commercial clients",
-  // open graph inherit from layout.tsx
+  
+  // Open Graph metadata is inherited from the root layout.
 };
 
 
@@ -19,7 +20,6 @@ export default function Home() {
 
         <HomeHero />  
 
-        {/* Content */}
         <div id="offer" className="flex flex-col w-full max-w-[80%] mx-auto py-20 gap-25">
           <ValueProposition />
           <KeyFeatures />  

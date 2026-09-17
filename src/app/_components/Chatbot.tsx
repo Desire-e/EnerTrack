@@ -8,16 +8,12 @@ import { motion } from "motion/react"
 import { AnimatePresence } from "motion/react";
 
 /**
-* Floating chat widget.
-* - Circular button, fixed in the bottom right corner.
-* - Clicking it opens a dark panel with the conversation.
-* - Uses the same useChat hook you already had in Chatbot.tsx.
+* Floating chatbot widget.
+* 
+* AI SDK chatbot documentation:
+* https://ai-sdk.dev/docs/ai-sdk-ui/chatbot
 */
 
-/** 
- * Resources:
- * https://ai-sdk.dev/docs/ai-sdk-ui/chatbot
-*/
 
 export default function Chatbot() {        
 
@@ -25,8 +21,6 @@ export default function Chatbot() {
      * Chat behavior and connection
      */
 
-    // useChat() points "/api/chat" by default, you could omit it, if it's the case
-    // const { messages, sendMessage, status } = useChat();
     const { messages, sendMessage, status } = useChat({
         transport: 
             new DefaultChatTransport({ // conects component with the route handler (route.ts) 
@@ -34,24 +28,16 @@ export default function Chatbot() {
             }),
     });
 
-    // Since AI SDK 5+, useChat doesn't manage the input
-    // The text's state that is writting will be your responsability
+    // Since AI SDK 5+, useChat doesn't manage the input state
     const [input, setInput] = useState("");
 
-    // <HTMLFormElement> specify the element that triggered the event 
-    // is specifically a <form> (gives more accurate autocomplete)
+
     function handleSubmit (e: React.SubmitEvent<HTMLFormElement>) {
-        
         e.preventDefault();
-        
-        // If input is empty, doesn't submit
+
         if (!input.trim()) return;
 
-        // sendMessage() adds the input to "messages" in an object
-        // and sends the POST request to the route handler (route.ts)
         sendMessage({ text: input });
-        
-        // Reset input's state
         setInput("");
     }
 
@@ -63,7 +49,6 @@ export default function Chatbot() {
     /**
      * Scroll behavior
      */
-    // Ref to the bottom of messages container 
     const messagesEndRef = useRef<HTMLDivElement>(null);
     
     // Effect to scroll every time the messages list change 
@@ -75,18 +60,20 @@ export default function Chatbot() {
     return (
         <aside aria-label="EnerTrack Assistant" 
         className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex flex-col items-end gap-3">
+            
             {/* Chat panel, only visible if it's open */}
             <AnimatePresence>
             { open && (
 
             <motion.div key="chat-panel"
-            initial={{ scaleY: 0,opacity: 0 }} // initially invisible
-            animate={{ scaleY: 1, opacity: 1 }} // animation to open, increase   
-            exit={{ scaleY: 0, opacity: 0 }} // animation to open, decrease
+            initial={{ scaleY: 0,opacity: 0 }} 
+            animate={{ scaleY: 1, opacity: 1 }}    
+            exit={{ scaleY: 0, opacity: 0 }} 
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            style={{ transformOrigin: "bottom" }} // collapses to the floating button at bottom
+            style={{ transformOrigin: "bottom" }} 
             className="flex h-[min(70vh,600px)] w-[min(90vw,380px)] flex-col overflow-hidden
-            rounded-2xl border border-white/10 bg-black shadow-xl shadow-black/40">    
+            rounded-2xl border border-white/10 bg-black shadow-xl shadow-black/40"
+            >    
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
                     <div className="flex items-center gap-2">
@@ -107,7 +94,7 @@ export default function Chatbot() {
                     </button>
                 </div>
 
-                {/* Messages history - prints all the conversation */}
+                {/* Messages history */}
                 <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4 chat-scroll">
                     
                     {messages.length === 0 && (
@@ -115,7 +102,6 @@ export default function Chatbot() {
                     )}
 
                     {/* Bubbles */}
-                    {/* role - who wrote the message */}
                     {messages.map((message) => (
                     <div
                     key={message.id}
@@ -131,8 +117,7 @@ export default function Chatbot() {
                             "bg-white/5 text-white/90"
                         }`}>
 
-                            {/* An UIMessage isn't a simple entry: the text lives inside "parts", 
-                            because a message can have several parts (text, results of tools, ...) */}
+                            {/* UIMessage content is stored in parts (text, results of tools, ...) */}
                             {message.parts.map((part, i) =>
                                 part.type === "text" ? 
                                 ( <ReactMarkdown key={i}>{part.text}</ReactMarkdown> ) : 
@@ -145,11 +130,6 @@ export default function Chatbot() {
     
                     {/* Dots while there's no response */}
 
-                    {/* status can be:
-                    ready (no request in progress, the user can type and send)
-                    submitted (you just sent the message, waiting for the server to start responding)
-                    streaming (the bot is responding in real time)
-                    error (something went wrong) */}
                     {status === "submitted" && (
                     <div className="flex justify-start">
                         <div className="rounded-2xl bg-white/5 px-3 py-2">
@@ -161,11 +141,11 @@ export default function Chatbot() {
                         </div>
                     </div>
                     )}
-                    {/* Invisible node to auto-scroll */}
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* Input to write new message */}
+
+                {/* Input message */}
                 <form
                 onSubmit={handleSubmit}
                 className="flex items-center gap-2 border-t border-white/10 p-3">
@@ -175,14 +155,16 @@ export default function Chatbot() {
                     placeholder="Write a message..."
                     disabled={status !== "ready"}
                     className="flex-1 rounded-full bg-white/5 px-4 py-2 text-sm text-white placeholder-white/30 
-                    outline-none ring-1 ring-white/10 focus:ring-teal-400 disabled:opacity-50"/>
+                    outline-none ring-1 ring-white/10 focus:ring-teal-400 disabled:opacity-50"
+                    />
                     
                     <button
-                    type="submit"
-                    disabled={status !== "ready" || !input.trim()}
-                    aria-label="Send message"
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full 
-                    bg-gradient-to-br from-teal-500 to-emerald-600 text-white transition disabled:opacity-40">
+                        type="submit"
+                        disabled={status !== "ready" || !input.trim()}
+                        aria-label="Send message"
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full 
+                        bg-gradient-to-br from-teal-500 to-emerald-600 text-white transition disabled:opacity-40"
+                    >
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>

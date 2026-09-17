@@ -7,12 +7,11 @@ import { motion } from "motion/react"
 export default function HomeHero() {
 
   /**
-   * Scroll handler. 
+   * Smooth scroll handler. 
    * Link to scroll next section (#offer) will always work 
    */
   function handleScroll(e: React.MouseEvent<HTMLAnchorElement>): void {
     e.preventDefault();
-    // if node #offer exists, scrolls to it 
     document.getElementById("offer")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -20,27 +19,20 @@ export default function HomeHero() {
         <section className="relative flex flex-col min-h-screen bg-black text-white xl:p-20 lg:p-15 p-10">
 
           {/* Background image */}
-          <Image 
-          src="/images/hero-image.jpg" 
-          alt="" 
-          fill // the image will occupy the size of its parent container
-          sizes="100vw" // indicates to Next which size should download approximately - this doesn't affect to style 
-          priority // indicates this image has loading priority
-          className="object-cover" />
+          <Image src="/images/hero-image.jpg" alt="" fill sizes="100vw" priority className="object-cover" />
           
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/20" />
 
-          {/* Content */}
-          <div className="relative z-10 flex flex-col xl:gap-10 gap-7 max-w-[100%] md:max-w-[55%] xl:p-20 p-1">
 
+          <div className="relative z-10 flex flex-col xl:gap-10 gap-7 max-w-[100%] md:max-w-[55%] xl:p-20 p-1">
             <div>
-              {/* animation - Staggered (subtitle, title, description, link CTA) */}
               <motion.p 
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:0.2}}
-              className="font-heading md:text-base text-sm text-teal-300 mb-2 tracking-[0.35em]">
+              className="font-heading md:text-base text-sm text-teal-300 mb-2 tracking-[0.35em]"
+              >
                 IOT ENERGY MONITORING SOLUTIONS
               </motion.p>
 
@@ -48,7 +40,8 @@ export default function HomeHero() {
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:0.4}}
-              className="font-heading md:text-6xl text-4xl font-black">
+              className="font-heading md:text-6xl text-4xl font-black"
+              >
                 Intelligent Energy Management for Industry
               </motion.h1>
             </div>
@@ -57,7 +50,8 @@ export default function HomeHero() {
             initial={{opacity:0, y:20}}
             animate={{opacity:1, y:0}}
             transition={{duration:0.6, delay:0.6}}
-            className='text-sm [text-underline-offset:4px]'>
+            className='text-sm [text-underline-offset:4px]'
+            >
               Real-time IoT monitoring to 
               <span className='underline decoration-teal-300 decoration-solid'> optimize energy use</span>
               , 
@@ -73,7 +67,8 @@ export default function HomeHero() {
             initial={{opacity:0, y:20}}
             animate={{opacity:1, y:0}}
             transition={{duration:0.6, delay:0.8}} 
-            className="md:max-w-[50%]">
+            className="md:max-w-[50%]"
+            >
               <Link
                 onClick={ handleScroll }
                 href="#offer"
@@ -81,7 +76,6 @@ export default function HomeHero() {
                 See our offer
               </Link>
             </motion.div>
-          
           </div>
         </section>
   );

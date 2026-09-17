@@ -23,7 +23,6 @@ export default function Contact() {
 
     return (
         <main>
-            {/* Content */}
             <div className="flex flex-wrap w-full mx-auto py-20 justify-center lg:divide-x-1 divide-black/20 lg:gap-1 gap-10">
                 <section className='flex flex-col gap-10 w-full lg:max-w-[50%] xl:px-20 px-10'>
                     <div className="font-heading">

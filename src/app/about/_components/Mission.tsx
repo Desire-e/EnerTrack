@@ -34,12 +34,9 @@ const cardVariants = paragraphVariants;
 export default function Mission(){
     return(
         <section className="flex flex-wrap lg:flex-row flex-col  w-full justify-between lg:divide-x-1 lg:divide-y-0 divide-y-1 divide-black/20">
-            
-            {/* Description */}
-            
-            {/* Animation - Each paragraph fades upwards as user scrolls */}
-            
+                        
             <div className="relative flex flex-col w-full lg:max-w-[55%] lg:px-10 py-10 overflow-hidden">
+                
                 <div className="relative z-10 flex flex-col gap-3 text-sm">
                     <h2 className="font-heading md:text-5xl text-3xl font-extrabold mb-3">
                         Our Mission
@@ -49,7 +46,8 @@ export default function Mission(){
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}>
+                    viewport={{ once: true, amount: 0.5 }}
+                    >
                         <motion.p variants={paragraphVariants}>
                             Our mission is to make energy consumption visible, understandable, and actionable.
                         </motion.p>
@@ -68,7 +66,6 @@ export default function Mission(){
                 
             </div>
 
-            {/* Company values - cards */}
             
             <motion.div className=" flex flex-col gap-5 w-full lg:max-w-[45%] lg:p-10 py-10"
             variants={containerVariants}

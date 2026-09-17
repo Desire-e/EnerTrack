@@ -70,7 +70,6 @@ export default function Footer() {
                   <li><Link href="/products?tab=energy-management">Energy Management</Link></li>
                 </ul>
 
-              {/* TODO. Routes - mailto... */}
                 <ul>
                   <li className="font-heading text-white font-semibold tracking-[0.25em]">
                     CONTACT

@@ -1,4 +1,3 @@
-// data/products.ts
 import { Product } from "@/app/products/_types/product";
 
 export const products: Product[] = [

@@ -4,7 +4,7 @@ export const teamAreas: TeamArea[] = [
   {
     title: "Energy & Operations",
     description: "Industry-focused expertise to understand energy challenges and identify opportunities for improvement.",
-    wide: true, // occupies 2 columns
+    wide: true,
   },
   {
     title: "IoT & Technology",

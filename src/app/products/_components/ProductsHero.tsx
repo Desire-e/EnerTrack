@@ -9,22 +9,23 @@ export default function ProductsHero() {
   
             {/* Background image */}
             <Image 
-            src="/images/hero-products-image.jpg" alt="" fill sizes="100vw" priority 
-            className="object-cover object-[center_45%]" />
+            src="/images/hero-products-image.jpg" 
+            alt="" fill sizes="100vw" priority 
+            className="object-cover object-[center_45%]" 
+            />
 
             {/* Overlay background image */}
             <div className="absolute inset-0 bg-black/80" />      
 
-            {/* Content */}
             <div className="relative z-10 flex flex-col md:gap-5 gap-3 md:max-w-[50%] max-w-[90%] md:px-3 px-1">
               
-              {/* Animation - Staggered (subtitle, title, description, cards) */}
               <div>
                 <motion.p 
                 initial={{opacity:0, y:20}}
                 animate={{opacity:1, y:0}}
                 transition={{duration:0.6, delay:0.2}}
-                className="font-heading md:text-base text-sm text-teal-300 mb-2 tracking-[0.35em]">
+                className="font-heading md:text-base text-sm text-teal-300 mb-2 tracking-[0.35em]"
+                >
                   PRODUCTS
                 </motion.p>
 
@@ -32,7 +33,8 @@ export default function ProductsHero() {
                 initial={{opacity:0, y:20}}
                 animate={{opacity:1, y:0}}
                 transition={{duration:0.6, delay:0.4}}
-                className="font-heading md:text-5xl text-3xl font-extrabold">
+                className="font-heading md:text-5xl text-3xl font-extrabold"
+                >
                   Solutions designed around your energy data
                 </motion.h1>
               </div>
@@ -41,7 +43,8 @@ export default function ProductsHero() {
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:0.6}}
-              className='text-sm [text-underline-offset:4px]'>
+              className='text-sm [text-underline-offset:4px]'
+              >
                 From real-time consumption monitoring to intelligent energy analysis, 
                 our solutions give your organization the visibility it needs to make better energy decisions.
               </motion.div>
@@ -54,7 +57,8 @@ export default function ProductsHero() {
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.2}}
-              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
+              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm"
+              >
                 <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
                 </svg>
@@ -65,7 +69,8 @@ export default function ProductsHero() {
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.4}}
-              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
+              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm"
+              >
                 <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
                 </svg>
@@ -76,7 +81,8 @@ export default function ProductsHero() {
               initial={{opacity:0, y:20}}
               animate={{opacity:1, y:0}}
               transition={{duration:0.6, delay:1.4}}
-              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm">
+              className="flex gap-3 bg-white/10 p-3 rounded-sm border-opacity-0 text-sm"
+              >
                 <svg className="size-6 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                 </svg>

@@ -5,16 +5,11 @@ import TitledCard from "@/app/_components/TitledCard";
 import { keyFeatures } from "@/app/_home/_data/features";
 
 
-// Animation variants - defines states/animation states with names
 const containerVariants: Variants = {
-  // State hidden
   hidden: {},
 
-  // State visible
   visible: {
-    // transition hidden to visible 
     transition: {
-      // every card starts animation 120 ms after previous sibbling card
       staggerChildren: 0.12,
     },
   },
@@ -47,18 +42,14 @@ export default function KeyFeatures() {
               </p>
             </div>
 
-            {/* Animation - cards appear from left to right when are 20% visible*/}
             <motion.div 
-            variants={containerVariants}    // variants 
-            initial="hidden"    // state hidden - defined in variants above
-            whileInView="visible"   // when this element enters the viewport, visible state. 
-            viewport={{   // how to detect the element is on viewport
-              once: true,     // executes the animation only the first time it appears on screen
-              amount: 0.2     // must have approximately 20% visible to be considered "in view" 
-            }} 
-            className="flex flex-wrap gap-5 md:gap-10 justify-end ">
+            variants={containerVariants}    
+            initial="hidden"    
+            whileInView="visible" 
+            viewport={{ once: true, amount: 0.2 }} 
+            className="flex flex-wrap gap-5 md:gap-10 justify-end "
+            >
               
-              {/* the children motion nodes inherit the state of their father */}
               {keyFeatures.map((feature, i) => (
                 <motion.div
                 key={`feature-${i}`}

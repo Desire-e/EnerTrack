@@ -2,8 +2,8 @@ import Image from "next/image";
 import { Product } from "@/app/products/_types/product"
 
 export function ProductCard(
-    { product }: //prop
-    { product: Product} ) { // type of prop
+    { product }: 
+    { product: Product} ) {
 
     return (
         <div className="flex flex-col lg:w-[45%] md:w-[75%] gap-5 p-8 bg-white/30 border-transparent rounded shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
@@ -11,20 +11,22 @@ export function ProductCard(
             <div className="flex xl:flex-row flex-col gap-5">
                 {/* Cover image */}
                 <div className="xl:w-[50%] w-full relative aspect-[3/2] shrink-0 self-start">
-                    <Image loading="lazy" fill sizes="50%" className="object-cover object-[center_45%]"
+                    <Image 
+                    loading="lazy" fill sizes="50%" 
+                    className="object-cover object-[center_45%]"
                     src={product.image === "" ? 
                         "/images/placeholder-image.png" : 
                         `/images/${product.image}` 
                     }
-                    alt={`${product.title}`} />
+                    alt={`${product.title}`} 
+                    />
                 </div>
 
                 <h2 className="font-heading font-extrabold md:text-3xl text-2xl mb-2">{product.title}</h2>
             </div>
             
-            {/* Data */}
-            <div className="flex flex-col gap-5">
 
+            <div className="flex flex-col gap-5">
                 <p className="text-black/60 text-sm">{product.description}</p>
 
                 <div>

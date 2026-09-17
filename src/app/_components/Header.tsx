@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from "react";
-// hook that allows you to read the pathname of the current URL.
 import { usePathname } from 'next/navigation'
 
 import { navLinks } from "@/app/_data/navlinks"
@@ -39,14 +38,12 @@ export default function Header() {
             </Link>
 
 
-            {/* Navigation (Desktop) */}
             <DesktopNav 
             navLinks={navLinks} 
             pathname={pathname} 
             />
 
 
-            {/* Dropdown panel button (mobile) */}
             <ButtonMobileNav 
             open={open} 
             setOpen={setOpen} 
@@ -54,7 +51,6 @@ export default function Header() {
         </div>
 
 
-        {/* Dropdown panel (mobile) */}
         <MobileNavPanel 
         navLinks={navLinks} 
         pathname={pathname} 

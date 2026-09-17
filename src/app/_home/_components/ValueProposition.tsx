@@ -40,25 +40,24 @@ export default function ValueProposition() {
             </p>
           </div>
           
-          {/* Animation - cards appear from left to right when are 20% visible*/}
-
-          {/* Cards */}
           <motion.div 
           variants={containerVariants} 
           initial="hidden"
           whileInView="visible"
-          viewport={{
-            once: true,     
-            amount: 0.2     
-          }}
-          className="flex flex-wrap gap-5 md:gap-10 justify-start">
+          viewport={{once: true, amount: 0.2 }}
+          className="flex flex-wrap gap-5 md:gap-10 justify-start"
+          >
+            
             {values.map((val, i) => (
               <motion.div 
               variants={cardVariants}
               key={`value-${i}`}>
+
                 <TitledCard {...val} />
+              
               </motion.div>
             ))}
+            
           </motion.div>
 
       </section>

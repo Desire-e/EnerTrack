@@ -1,15 +1,8 @@
 "use server";
 
-// library that defines which data is valid
 import { z } from "zod";
 
-// -------------------------
 // Validation rules
-// -------------------------
-// name - string, min characters
-// email - string, email format
-// message - string, min characters
-
 const validationRules = z.object({
     name: z.string().min(2, 'Name must contain at least 2 characters'),
     email: z.email('Please enter a valid email address'),
@@ -17,28 +10,20 @@ const validationRules = z.object({
 });
 
 
-// -------------------------
-// A type defined for state
-// -------------------------
 
 export type ContactFormState = {
-    // propieties
     errors: {
-        // error's optional propieties 
         name?: string[];
         email?: string[];
         message?: string[];
     };
-    
-    // for data persistence
+    // data persistence
     values: {
         name: string;
         email: string;
         message: string;
     };
-    
     message: string;
-    
     success: boolean;
 };
 
@@ -48,50 +33,36 @@ export type ContactFormState = {
 // -------------------------
 
 export async function sendContactMessage (
-    // previous state
-    _prevState: {
-        errors: {
-            name?: string[];
-            email?: string[];
-            message?: string[];
-        };
-        message: string;
-        success: boolean;
-    },
-    // new data
-    formData: FormData) {
+_prevState: {
+    errors: {
+        name?: string[];
+        email?: string[];
+        message?: string[];
+    };
+    message: string;
+    success: boolean;
+},
+formData: FormData) {
 
-
-    // Obtain form data values, parsed
     const values = {
         name: formData.get("name")?.toString() ?? "",
         email: formData.get("email")?.toString() ?? "",
         message: formData.get("message")?.toString() ?? "",
     }
     
-    // Validate form data
-    // return object with success and data
     const validatedFields = validationRules.safeParse(values);
 
-    // if invalid
+    // invalid
     if (!validatedFields.success) {
         return {
-            // formating errors with flattenError(validatedFields.error)
             errors: z.flattenError(validatedFields.error).fieldErrors,
-            // old invalid values
             values,
             message: "",
             success: false,
         };
     }
 
-    // if valid
-    const { name, email, message } = validatedFields.data;
-
-    console.log(name);
-    console.log(email);
-    console.log(message);
-
+    // valid
     return {
         errors: {},
         values: { 
